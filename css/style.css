@@ -89,7 +89,7 @@ li.selected{
     text-align: center;
 }
 
-/*Black bacjground for locations in chat-app-bar*/
+/*Black background for locations in chat-app-bar*/
 #channelLocation a{
     color: rgb(0, 0, 0);
 }

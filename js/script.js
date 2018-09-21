@@ -12,7 +12,7 @@ function switchChannel(channelName, locationName, image) {
     //Changes all inactive channels to be not selected
     $('li:not(:contains(' + channelName + '))').removeClass('selected');
     //Adds a w3words location link to the location in the chat-app-bar
-    $('#channelLocation').html(locationName.link('https://map.what3words.com/upgrading.never.helps'));
+    $('#channelLocation').html(locationName.link('https://map.what3words.com/'+locationName));
     //Adds an empty star to the chat-app-bar if the current channel is changed
     $('#star-icon').attr('src','https://ip.lfe.mw.tum.de/sections/'+ image +'.png');
 }
