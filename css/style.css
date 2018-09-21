@@ -1,145 +1,325 @@
-/* #4 #sweat #external css file */
+/*-------------STYLE SECTION-----------------*/
+/*(find the layout section in line 155)*/
 
-/* GLOBAL */
+/*Color palette:
+    background color: very light grey rgb(230, 230, 230)
+    primary text: very dark grey (messages, channels) rgb(63, 63, 63)
+    primary color: bright orange (app bar) rgb(255, 115, 13)
+    primary color text: black (app bar) rgb(0, 0, 0)
+    accent color: blue grey (bttons) rgb(55, 71, 79)
+    accent color text: white (buttons) rgb(255, 255, 255)*/
 
-/* #4 #global styles*/
+/*-----------------------------------*/
 
-* {
-    /* #4 use #roboto #font */
-    font-family: 'Roboto', 'Arial', sans-serif;
-
-     /* #4 #sweat take care of #spacing between various elements */
+/*GLOBAL STYLE*/
+*{
+    font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-body {
-    background-color: #F5F5F5;
+/*styles for the body*/
+body{
+    background-color: rgb(230, 230, 230);
 }
 
-/* #4 # sweat #uppercase buttons and w3w locations */
-button, strong {
+/*Buttons & w3words-locations are uppercase*/
+button, strong{
     text-transform: uppercase;
 }
 
+/*-----------------------------------*/ 
 
-
-/* APP BAR */
-
-/* #4 #sweat address both #app-bar s */
+/*APP BARS*/
 h1 {
-    background-color: #3F51B5;
-    color: white;
+    /*reused styles*/
+    background-color: rgb(255, 115, 13);
+    color: rgb(0, 0, 0);
+    /*font-size/weight*/
+    font-size: 20px;
+    font-weight: bold;
+    /*spacing*/
+    letter-spacing: -0.5px;
+    /*height*/
+    height: 60px;
 }
 
+/*-----------------------------------*/
 
-/* CHANNELS LIST */
+/*CHANNELS LIST*/
 
-/* #4 #sweat #channels */
-ul {
-    /* #3 #channels #list modifies h2 to ul */
-    background-color: white;
-    /* #3 #channels #bullets removed */
+/*channel list style in general*/
+ul{
+    background-color: rgb(255, 255, 255);
     list-style-type: none;
 }
 
-li {
-    /* #4 #channel #tile geometry */
-    box-sizing: border-box;
-    height: 48px;
-    padding: 16px;
+/*channels styles geometry & lines*/
+li{
+    color: rgb(63, 63, 63);
     font-size: 16px;
-    /* #4 #channel tiles are separated by #lines */
-    border-bottom: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    padding: 16px;
+    height: 48px;
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
-/* #4 active #channel is #highlighted */
-li.selected {
-    color: #3F51B5;
-    border-left: 4px solid #3F51B5;
+/*selected channel is highlighted in primary color*/
+li.selected{
+    color: rgb(255, 115, 13);
+    border-left: 4px solid rgb(255, 115, 13);
 }
 
-li img {
-    /* #4 #middle vertical alignment of icons in the #channels list */
-    vertical-align: middle;
+/*------------------------------------*/
+
+/*TAB BAR & CHAT BAR*/
+
+#tab-bar, #chat-bar{
+    background-color: rgb(255, 255, 255);
+    color: rgb(63, 63, 63);
+    height: 72px;
 }
 
-/* TAB BAR */
-
-/* #4 #sweat #tab-bar */
-#tab-bar {
-    /* #3 #tab-bar #container should be white */
-    background-color: white;
-    /* #3 #tab-bar #container has all buttons centered */
+#tab-bar button{
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+    padding: 16px;
+    border: none;
+    width: 33%;
     text-align: center;
 }
 
-/* #4 add styles to #tab-bar #buttons */
-#tab-bar button {
-    background-color: white;
-    border: none;
-    font-size: 13px;
-
-    /* #4 #tab-bar buttons have a width of #one-third of the available space */
-    width: 33%;
-    height: 72px;
-    padding: 16px;
+/*Black bacjground for locations in chat-app-bar*/
+#channelLocation a{
+    color: rgb(0, 0, 0);
 }
 
-/* #4 #tab-bar buttons do have a #line-break and images are centered due to the left&right auto margin */
-#tab-bar button img {
+/*Alignment of icons inside tap bar buttons*/
+#tab-bar button img{
     display: block;
     margin: 0 auto 4px auto;
 }
 
-/* #4 the selected #tab-bar #button is #highlighted */
-#tab-bar button.selected {
-    color: #3F51B5;
-    border-bottom: 4px solid #3F51B5;
+/*Selected button is highlighted in primary color*/
+#tab-bar button.selected{
+    color: rgb(255, 115, 13);
+    border-bottom: 4px solid rgb(255, 115, 13);
 }
 
+/*-------------------------------------*/
 
-/* MESSAGES */
-/* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
-.message {
-    /* #3 #chat #width*/
+/*MESSAGES*/
+
+/*Style for all chat messages*/
+.chat-messages{
     width: 80%;
-
-    /* #4 align all #messages using #margins */
-    margin-left: 2.5%;
-
-    /* #4 #message distance to next message container*/
     margin-bottom: 8px;
+    margin-left: 2.5%;
 }
 
-
-.message h3 {
+/*Metadata*/
+.chat-messages h3{
+    color: rgb(0, 0, 0);
     font-size: medium;
 }
 
-.message h3 em {
+/*w3words locations link color*/
+.chat-messages h3 a{
+    color: rgb(0, 0, 0);
+}
+
+/*ttl*/
+.chat-messages h3 em{
     font-size: larger;
     font-style: normal;
 }
 
-.message h3 a {
-    /* #3 #chat #link color is primary text */
-    color: black;
-}
-
-.message p {
-    background-color: white;
+/*Written text - actual message*/
+.chat-messages p{
+    background-color: rgb(255, 255, 255);
+    color: rgb(63, 63, 63);
     padding: 16px;
 }
 
-.message button {
-    background-color: #CDDC39;
-    color: black;
-    text-transform: uppercase;
+/*+5 MIN-Buttons after chat-message*/
+.chat-messages button{
+    background-color: rgb(55, 71, 79);
+    color: rgb(255, 255, 255);
 }
 
-/* #4 left align own #messages using #margins */
-.message.own {
+/*Own text message is further to the right*/
+.chat-messages.own{
     margin-left: 17.5%;
 }
 
+/*------------------------------------------*/
+/*------------------------------------------*/
+
+/*--------------LAYOUT SECTION--------------*/
+
+/*--GLOBAL LAYOUT--*/
+
+/*Channel area is placed on the left of the screen*/
+#channel-area{
+    position: absolute;
+    left: 0;
+    width: 40%;
+    height: 100%;
+}
+
+/*Chat area is placed on the right of the screen*/
+#chat-area{
+    position: absolute;
+    right: 0;
+    width: 60%;
+    height: 100%;
+}
+
+/*------------------------------------------*/
+
+/*--APP BARS POSITIONING--*/
+
+/* App bar is on the top*/
+h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/*Moocus-icon inside the channel-app-bar*/
+#moocus-icon{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+}
+
+/*App name inside channel-app-bar*/
+h1 p{
+    position: absolute;
+    left: 60px;
+    line-height: 60px;
+}
+
+/*Channel and location inside chat-app-bar*/
+h1 div{
+    position: absolute;
+    left: 10px;
+    line-height: 60px;
+}
+
+/*Star icon on the right of the chat-app-bar*/
+#star-icon{
+    position: absolute;
+    right: 0px;
+    height: auto;
+    padding: 20px 16px;
+}
+/*-------------------------------------------*/
+
+/*--CHANNELS LIST POSITIONING--*/
+
+/*Channels list position with scroll bar*/
+ul{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    bottom: 72px;
+    overflow: auto;
+}
+
+/*Star and arrow icon are on the right of each channel*/
+.channel-meta{
+    position: absolute;
+    right: 0;
+    padding: 0px;    
+}
+
+/*-------------------------------------------*/
+
+/*--TAB BAR & CHAT BAR POSITIONING--*/
+
+/*Tab bar at the bottom with buttons equally distributed*/
+#tab-bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*Chat bar at the bottom with the reversed order of emojis-button and emojis*/
+#chat-bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+/*Emojis-button*/
+#emojis-button{
+    margin-left: 16px;
+    align-self: flex-start;
+}
+
+/*Emojis pop-up window*/
+#emojis{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    width: 140px;
+    height: 140px;
+    font-size: 28px;
+    text-align: left;
+    padding: 16px;
+    margin-left: 16px;
+    margin-top: 284px;
+    position: absolute;
+    bottom: 60px;
+    overflow: auto;
+    display: none;
+}
+
+/*-------------------------------------------*/
+
+/*--MESSAGES POSITION--*/
+
+/*Position of all messages to enable the scroll bar*/
+#chat{
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    bottom: 72px;
+    left: 0;
+    overflow: auto;
+}
+
+/*Chat message container for referencing*/
+.chat-messages{
+    position: relative;
+}
+
+/*new +5 min. button position*/
+.chat-messages button{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+}
+
+/*W3words-location and meta-data is destributed equally above the actual message*/
+.chat-messages h3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/*The meta-data dates are in one column underneath each other*/
+.chat-messages h3 span {
+    width: fixed;
+    display: flex;
+    justify-content: center;
+}
